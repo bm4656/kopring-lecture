@@ -68,7 +68,7 @@ class Project(
         this.isActive = isActive
     }
 
-    fun addDetail(detail: MutableList<ProjectDetail>?) {
+    fun addDetails(detail: MutableList<ProjectDetail>?) {
         if (detail != null) {
             this.details.addAll(detail)
         }

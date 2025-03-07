@@ -65,7 +65,7 @@ class Experience(
         this.isActive = isActive
     }
 
-    fun addDetail(detail: MutableList<ExperienceDetail>?) {
+    fun addDetails(detail: MutableList<ExperienceDetail>?) {
         if (detail != null) {
             this.details.addAll(detail)
         }
