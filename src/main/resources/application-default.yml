@@ -5,10 +5,10 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: create
-      properties:
-        hibernate:
-          format_sql: false
-          # default_batch_fetch_size: 10
+    properties:
+      hibernate:
+        format_sql: false
+        # default_batch_fetch_size: 10
   datasource:
     url: jdbc:h2:mem:portfolio
     username: sa
