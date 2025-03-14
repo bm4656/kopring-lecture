@@ -44,7 +44,7 @@ class DataInitializer(
 
         // introduction 초기화
         val introductions = mutableListOf<Introduction>(
-            Introduction(content = "주도적으로 문제를 찾고, 해결하는 고양이입니다.", isActive = true),
+            Introduction(content = "주도적으로 문제를 찾고, 해결하는 햄스터입니다.", isActive = true),
             Introduction(
                 content = "기술을 위한 기술이 아닌, 비즈니스 문제를 풀기 위한 기술을 추구합니다.",
                 isActive = true
