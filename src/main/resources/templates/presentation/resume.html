@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<html lang="ko" th:replace="~{presentation/layouts/layout-main :: layout(~{::#content})}"
+      xmlns:th="http://www.thymeleaf.org">
 
-<div th:replace="~{presentation/fragments/fragment-head :: head}"></div>
 <main class="flex-shrink-0" id="content">
 
     <!-- Page Content-->
