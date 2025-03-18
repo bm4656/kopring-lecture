@@ -28,7 +28,7 @@ class AdminAchievementService(
     @Transactional
     fun update(id: Long, form: AchievementForm) {
         val achievement = form.toEntity(id)
-        achievementRepository.save(achievement)
+        achievementRepository.save(achievement) // TODO: save 안해도 업데이트 되는지 테스트 해보기
     }
 
 }
