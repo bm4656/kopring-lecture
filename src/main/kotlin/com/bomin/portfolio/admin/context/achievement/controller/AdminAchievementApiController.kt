@@ -8,7 +8,7 @@ import org.springframework.validation.annotation.Validated
 import org.springframework.web.bind.annotation.*
 
 @RestController
-@RequestMapping("/admin/api/achievement")
+@RequestMapping("/admin/api/achievements")
 class AdminAchievementApiController(
     private val adminAchievementService: AdminAchievementService
 ) {

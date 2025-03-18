@@ -52,14 +52,15 @@ class Project(
     }
 
     fun update(
-        title: String, description: String,
+        name: String,
+        description: String,
         startYear: Int,
         startMonth: Int,
         endYear: Int?,
         endMonth: Int?,
         isActive: Boolean
     ) {
-        this.name = title
+        this.name = name
         this.description = description
         this.startYear = startYear
         this.startMonth = startMonth
