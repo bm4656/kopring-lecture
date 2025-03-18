@@ -2,6 +2,8 @@ package com.bomin.portfolio.admin.context.skill.service
 
 import com.bomin.portfolio.admin.context.skill.form.SkillForm
 import com.bomin.portfolio.admin.data.TableDTO
+import com.bomin.portfolio.admin.exception.AdminBadRequestException
+import com.bomin.portfolio.domain.constant.SkillType
 import com.bomin.portfolio.domain.entity.Skill
 import com.bomin.portfolio.domain.repository.SkillRepository
 import org.springframework.stereotype.Service
@@ -20,6 +22,10 @@ class AdminSkillService(
 
     @Transactional
     fun save(form: SkillForm) {
+        val skillType = SkillType.valueOf(form.type)
+        skillRepository.findByNameIgnoreCaseAndType(form.name, skillType)
+            .ifPresent { throw AdminBadRequestException("중복된 데이터입니다.") }
+
         val skill = form.toEntity()
         skillRepository.save(skill)
     }
