@@ -25,17 +25,24 @@ class DataInitializer(
         // achievement 초기화
         val achievements = mutableListOf<Achievement>(
             Achievement(
-                title = "2022 Catkao 해커톤 최우수상",
-                description = "고양이 쇼핑몰 검색 서비스의 아키텍처, 데이터 모델링, API 개발 역할 수행",
-                host = "캣카오",
-                achievedDate = LocalDate.of(2022, 8, 1),
+                title = "[수상] UNITHON 11TH 해커톤 대상",
+                description = "AI 기반 톡방 대화 분석 서비스 <2024 대화 평화상>",
+                host = "UNITHON",
+                achievedDate = LocalDate.of(2024, 4, 6),
                 isActive = true
             ),
             Achievement(
-                title = "정보처리기사",
-                description = "자료구조, 운영체제, 알고리즘, 데이터베이스 등",
-                host = "한국산업인력공단",
-                achievedDate = LocalDate.of(2020, 2, 2),
+                title = "[수상] 2023 DMU 스마트 프로젝트 경진대회 우수상",
+                description = "컴퓨터소프트웨어공학과 졸업작품 <What Song>",
+                host = "동양미래대학교",
+                achievedDate = LocalDate.of(2023, 12, 17),
+                isActive = true
+            ),
+            Achievement(
+                title = "[자격증]AWS Certified Cloud Practitioner",
+                description = "컴퓨터소프트웨어공학과 졸업작품 <What Song>",
+                host = "동양미래대학교",
+                achievedDate = LocalDate.of(2022, 7, 24),
                 isActive = true
             ),
         )
@@ -44,13 +51,13 @@ class DataInitializer(
 
         // introduction 초기화
         val introductions = mutableListOf<Introduction>(
-            Introduction(content = "주도적으로 문제를 찾고, 해결하는 햄스터입니다.", isActive = true),
+            Introduction(content = "'유저의 입장에서 사소한 디테일까지' 세심하게 실현하려 노력하는 김보민입니다.", isActive = true),
             Introduction(
-                content = "기술을 위한 기술이 아닌, 비즈니스 문제를 풀기 위한 기술을 추구합니다.",
+                content = "코드의 품질과 프로젝트 고도화를 위한 리팩터링을 수행하며 최적화된 개발을 하고자 합니다.",
                 isActive = true
             ),
             Introduction(
-                content = "기존 소스를 리팩토링하여 더 좋은 구조로 개선하는 작업을 좋아합니다.",
+                content = "사용자가 이해가 가는 서비스를 만드는 것을 목표로 하고 있습니다.",
                 isActive = true
             )
         )
@@ -59,87 +66,72 @@ class DataInitializer(
 
         // link 초기화
         val links = mutableListOf<Link>(
-            Link(name = "Github", content = "https://github.com/infomuscle", isActive = true),
-            Link(
-                name = "Linkedin", content = "https://www.linkedin.com/in/bokeunjeong",
-                isActive = true
-            ),
+            Link(name = "Github", content = "https://github.com/bm4656", isActive = true),
         )
 
         linkRepository.saveAll(links)
 
         // experience 초기화
         val experience1 = Experience(
-            title = "캣홀릭대학교(CatHolic Univ.)",
-            description = "컴퓨터공학 전공",
-            startYear = 2018,
-            startMonth = 9,
-            endYear = 2022,
-            endMonth = 8,
+            title = "동양미래대학교",
+            description = "컴퓨터소프트웨어공학과(학사)",
+            startYear = 2023,
+            startMonth = 3,
+            endYear = 2024,
+            endMonth = 2,
             isActive = true,
         )
         experience1.addDetails(
             mutableListOf(
-                ExperienceDetail(content = "GPA 4.3/4.5", isActive = true),
-                ExperienceDetail(
-                    content = "소프트웨어 연구 학회 활동", isActive = true
-                )
+                ExperienceDetail(content = "GPA 4.35/4.5", isActive = true),
             )
         )
 
         val experience2 = Experience(
-            title = "주식회사 캣카오(Catkao Corp.)",
-            description = "소셜서비스팀 백엔드 개발자",
-            startYear = 2022,
-            startMonth = 9,
-            endYear = null,
-            endMonth = null,
+            title = "동양미래대학교",
+            description = "컴퓨터소프트웨어공학과(3년)",
+            startYear = 2020,
+            startMonth = 3,
+            endYear = 2023,
+            endMonth = 2,
             isActive = true,
         )
         experience2.addDetails(
             mutableListOf(
-                ExperienceDetail(
-                    content = "유기묘 위치 공유 서비스 개발", isActive = true
-                ),
-                ExperienceDetail(
-                    content = "신입 교육 프로그램 우수상 수상", isActive = true
-                )
+                ExperienceDetail(content = "GPA 4.18/4.5", isActive = true),
             )
         )
 
         experienceRepository.saveAll(mutableListOf(experience1, experience2))
 
         // skill 초기화 - 만든 엔티티를 변수에 할당 -> 아래 project init에서 사용
+        val node = Skill(name = "NodeJS", type = SkillType.LANGUAGE.name, isActive = true)
+        val nest = Skill(name = "NestJS", type = SkillType.FRAMEWORK.name, isActive = true)
         val java = Skill(name = "Java", type = SkillType.LANGUAGE.name, isActive = true)
-        val kotlin = Skill(name = "Kotlin", type = SkillType.LANGUAGE.name, isActive = true)
-        val python = Skill(name = "Python", type = SkillType.LANGUAGE.name, isActive = true)
         val spring = Skill(name = "Spring", type = SkillType.FRAMEWORK.name, isActive = true)
-        val django = Skill(name = "Django", type = SkillType.FRAMEWORK.name, isActive = true)
         val mysql = Skill(name = "MySQL", type = SkillType.DATABASE.name, isActive = true)
-        val redis = Skill(name = "Redis", type = SkillType.DATABASE.name, isActive = true)
-        val kafka = Skill(name = "Kafka", type = SkillType.TOOL.name, isActive = true)
+
 
         skillRepository.saveAll(
             mutableListOf(
-                java, kotlin, python, spring, django, mysql,
-                redis, kafka
+                node, nest,
+                java, spring, mysql,
             )
         )
 
         // project / project_detail / project_skill 초기화
         val project1 = Project(
-            name = "유기묘 발견 정보 공유 서비스",
-            description = "유기묘 위치의 실시간 공유, 임시보호까지 연결해주는 서비스. 구글 맵스를 연동하여 유기묘 위치 정보를 직관적으로 파악할 수 있도록 하는 사용자 경험 개선 작업.",
-            startYear = 2022,
-            startMonth = 9,
-            endYear = 2022,
-            endMonth = 12,
+            name = "운동 동호회 모집 및 커뮤니티 서비스",
+            description = "운동 특화 커뮤니티 서비스로, 운동 동호회 모집 및 운동 정보 공유를 위한 서비스입니다.",
+            startYear = 2025,
+            startMonth = 3,
+            endYear = null,
+            endMonth = null,
             isActive = true
         )
         project1.addDetails(
             mutableListOf(
-                ProjectDetail(content = "구글 맵스를 활용한 유기묘 발견 지역 정보 제공 API 개발", url = null, isActive = true),
-                ProjectDetail(content = "Redis 적용하여 인기 게시글의 조회 속도 1.5초 → 0.5초로 개선", url = null, isActive = true),
+                ProjectDetail(content = "아직 진행중이라 내용 추가가 필요합니다.", url = null, isActive = true),
             )
         )
         // 위의 addDetails 처럼 project안에 메소드로 묶어도됨, 방법을 알려주기 위해 두가지 방법 혼용
@@ -148,34 +140,10 @@ class DataInitializer(
                 ProjectSkill(project = project1, skill = java),
                 ProjectSkill(project = project1, skill = spring),
                 ProjectSkill(project = project1, skill = mysql),
-                ProjectSkill(project = project1, skill = redis)
             )
         )
 
-        val project2 = Project(
-            name = "반려동물 홈 카메라 움직임 감지 분석 모듈",
-            description = "카메라에서 서버로 전달되는 신호를 분석하여 움직임이 감지될 경우 클라이언트에게 알림 발송 작 업.",
-            startYear = 2022,
-            startMonth = 12,
-            endYear = null,
-            endMonth = null,
-            isActive = true
-        )
-        project2.addDetails(
-            mutableListOf(
-                ProjectDetail(content = "IL(Pillow) 활용하여 이미지 분석 기능 개발", url = null, isActive = true),
-                ProjectDetail(content = "알림 발송을 비동기 처리하여 이미지 분석 - 알림 발송 기능간 의존도 감소", url = null, isActive = true),
-                ProjectDetail(content = "Github Repository", url = "https://github.com/infomuscle", isActive = true),
-            )
-        )
-        project2.skills.addAll(
-            mutableListOf(
-                ProjectSkill(project = project2, skill = python),
-                ProjectSkill(project = project2, skill = django),
-                ProjectSkill(project = project2, skill = kafka)
-            )
-        )
 
-        projectRepository.saveAll(mutableListOf(project1, project2))
+        projectRepository.saveAll(mutableListOf(project1))
     }
 }
