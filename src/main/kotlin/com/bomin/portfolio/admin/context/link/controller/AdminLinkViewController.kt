@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping
 @RequestMapping("/admin/link")
 class AdminLinkViewController(
     private val adminLinkService: AdminLinkService,
-    linkService: AdminLinkService
 ) {
     @GetMapping
     fun link(model: Model): String {
